@@ -19,17 +19,6 @@ run/
 **/nbproject/Makefile-*
 **/nbproject/Package-*
 **/nbproject/project.properties
-# X2C generated and temporary files to ignore
-**/X2CScope_MCC_lib/X2CScope_MCC_Lib/standalone-setup-*.xml
-**/X2CScope_MCC_lib/X2CScope_MCC_Lib/mcc-setup-*.xml
-**/X2CScope_MCC_lib/X2CScope_MCC_Lib/core-setup-*.xml
-**/X2CScope_MCC_lib/X2CScope_MCC_Lib/library-setup-*.xml
-**/X2C_MCC_lib/X2C_MCC_Lib/core-setup-*.xml
-**/X2C_MCC_lib/X2C_MCC_Lib/mcc-setup-*.xml
-**/X2C_MCC_lib/X2C_MCC_Lib/library-setup-*.xml
-**/X2C_MCC_lib/X2C_MCC_Lib/standalone-setup-*.xml
-**/X2C/DemoApplication/H3_test.zip
-**/X2C/activateScilabX2C.bat
 # motorbench files to ignore
 *motorbench-log.0.0.txt
 *motorbench-log.0.0.txt.lck
