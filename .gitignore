@@ -1,3 +1,4 @@
+# folders to ignore where *.X is root of repository
 build/
 nbbuild/
 dist/
@@ -5,6 +6,7 @@ nbdist/
 .nb-gradle/
 debug/
 run/
+# folder to ignore where *.X is not root of repository
 **/*.X/build
 **/*.X/nbbuild/
 **/*.X/dist
@@ -12,10 +14,12 @@ run/
 **/*.X/nb-gradle/
 **/*.X/debug
 **/*.X/run/
+#other folders and files to ignore
 **/nbproject/private
 **/nbproject/Makefile-*
 **/nbproject/Package-*
 **/nbproject/project.properties
+# X2C generated and temporary files to ignore
 **/X2CScope_MCC_lib/X2CScope_MCC_Lib/standalone-setup-*.xml
 **/X2CScope_MCC_lib/X2CScope_MCC_Lib/mcc-setup-*.xml
 **/X2CScope_MCC_lib/X2CScope_MCC_Lib/core-setup-*.xml
@@ -26,13 +30,15 @@ run/
 **/X2C_MCC_lib/X2C_MCC_Lib/standalone-setup-*.xml
 **/X2C/DemoApplication/H3_test.zip
 **/X2C/activateScilabX2C.bat
+# motorbench files to ignore
+*motorbench-log.0.0.txt
+*motorbench-log.0.0.txt.lck
+# extensions to ignore
 *.bak
 *.dat
 *.exe
 *.bkp
 *.7z
-*motorbench-log.0.0.txt
-*motorbench-log.0.0.txt.lck
 *.h_backup
 *.c_backup
 *.backup
