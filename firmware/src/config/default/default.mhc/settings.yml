@@ -1,0 +1,14 @@
+configName: default
+folderName: SAME51_X2CScope
+format_version: v1.0
+frameworkPath: ..\..\..\..\microchip\harmony_repo
+processor: ATSAME51J20A
+projectName: SAME51_X2CScope
+settings:
+  PackageFilter: csp;quick_docs;x2c;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAME51_DFP\3.3.78\atdf\ATSAME51J20A.atdf
