@@ -4,7 +4,7 @@ This is a X2CScope demo project for [SAME51 Curiosity Nano](https://www.microchi
 
 The purpose is to demonstrate the X2CScope tool features like run-time watch and run-time scope views.
 
-The code functionality is generating a sawtooth signal and a sine signal. There is one LED (PA14) that is blinking with the sawtooth signals period. The second psuedo LED (PB15) can be controlled manually by the X2Cscope Watch tool. The state of the SW1 (PA15) can be read out by X2Cscope.
+The firmware generates a sawtooth signal and a sine signal. There is LED2 (PA14 - LED0 on the baord) that is blinking with the sawtooth signals period. The second psuedo LED1 (PB15) can be controlled manually by the X2Cscope Watch tool. The state of the SW1 (PA15) can be read out by X2Cscope.
 
 ![X2Cscope](doc/Scope_Animated.gif)
 
@@ -17,11 +17,23 @@ The demo is ready to use with the [listed hardwares below](#hardware).
 3. Open project - firmware\X2CScope_blinky_SAME51_CNANO.X with MPLAB X
 4. Build project then program the HW
 
-## Monitoring signals
+## Use X2Cscope
 
-The demo is shiped with run time monitoring and tuning feature using the X2CScope plugin and Harmony 3 X2C package using the X2CScope Component.
+The X2Cscope tool uses the UART to transfer data from and to the HW. To use this feature follow the steps:
 
-The X2CScope component uses the Virtual COM Port (VCP) to transfer data from and to the HW. To use this feature follow the steps:
+1. Verify if X2Cscope plug-in is installed within MPLAB X. Detailed user guide: https://x2cscope.github.io/
+2. Open X2Cscope 
+
+![Open X2C MCC](doc/open_X2Cscope.png)
+
+3. Verify UART settings at the Connection Setup tab and also check the COM port number on the PC. (device manager)
+
+4. Connect to the HW with clicking on the connect sign:
+
+![Open Button](doc/Connect_X2Cscope.png)
+
+6. Use the data views (available on the Data Views tab).
+
 
 ### Hardware
 
@@ -35,19 +47,43 @@ The X2CScope component uses the Virtual COM Port (VCP) to transfer data from and
 
 ### Configuration
 
-The SAME51 Curiosity Nano is used in its default configuration, no changes are necesary
+The SAME51 Curiosity Nano is used in its default configuration, no hardware/Jumper changes are necesary
 
 ## Peripheral settings and I/O connections: 
 
-   Peripherals are configured by [Harmony 3](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/mplab-harmony-v3) according to the SAME51 Curiosity Nano [schematics](https://ww1.microchip.com/downloads/en/DeviceDoc/SAME51-Curiosity-Nano-User-Guide-DS70005432A.pdf).
+**SERCOM5 (UART):**
+   * Baud rate: 115200
+   * Parity: None
+   * Data bits: 8
+   * Stop bits: 1
+   * Flow control: no
+   
+**TIMER1 (TC1):**
+   * 1ms period
+   * interrupt enabled
+
+**IO**
+
+| PIN | PORT   | SW Function |
+| ----|--------|-------------|
+|  39 | PB16   | SERCOM5 TX  |
+|  40 | PB17   | SERCOM5 RX  |
+|  28 | PB15   | IO_LED1     |
+|  31 | PA14   | IO_LED2     |
+|  32 | PA15   | IO_SW1      |
+
+## Peripheral settings and I/O connections: 
+
+   Peripherals are configured using [Harmony 3](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/mplab-harmony-v3) according to the SAME51 Curiosity Nano [schematics](https://ww1.microchip.com/downloads/en/DeviceDoc/SAME51-Curiosity-Nano-User-Guide-DS70005432A.pdf).
 
    If you need more details for peripheral configuration, open [The Harmony 3 help](https://github.com/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/wiki)
 
-### Software & Build Environment
+## Software & Build Environment
 
-The demo requires the following to start:
-* [MPLAB X 5.4x and upwards](https://www.microchip.com/mplab/mplab-x-ide) Integrated Development Environment. 
+The demo requires the following to Applications and Plugins:
+* [MPLABX 5.4x and upwards](https://www.microchip.com/mplab/mplab-x-ide) Integrated Development Environment. 
+* [X2CScope Plugin](https://microchip-mplab-harmony.github.io/x2c/x2c-scope/docs/readme.html) X2Cscope Plugin for MPLABX - requires intsall from plugin menu in MPLABX IDE
 * [XC32 v2.20](https://www.microchip.com/mplab/compilers) - Microchip C compiler for 32bit micros
 * [Harmony 3.xx](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/mplab-harmony-v3) - Code Generation and Configuruation tool
-* X2CScope MPLABX Plugin (requires intsall from plugin menu in MPLABX IDE). 
-If SW modification is required then the Harmony 3 plugin will need to be installed alongside packages through the Harmony 3 content manager:
+
+If SW modification is required then the Harmony 3 plugin will need to be installed alongside packages through the Harmony 3 content manager.
