@@ -2,6 +2,8 @@
 
 This is a X2CScope demo project for [SAME51 Curiosity Nano](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV76S68A) development board and [ATSAME51J20A](https://www.microchip.com/wwwproducts/en/ATSAME51J20A) microcontroller. 
 
+![Hardware](doc/SAME51_CNANO.png)
+
 The purpose is to demonstrate the X2CScope tool features like run-time watch and run-time scope views.
 
 The firmware generates a sawtooth signal and a sine signal. There is LED2 (PA14 - LED0 on the baord) that is blinking with the sawtooth signals period. The second psuedo LED1 (PB15) can be controlled manually by the X2Cscope Watch tool. The state of the SW1 (PA15) can be read out by X2Cscope.
